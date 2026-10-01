@@ -81,6 +81,20 @@
   .cat h3{ font-size:19px; margin:16px 0 6px; color:var(--ink); }
   .cat p{ font-size:14px; color:var(--charcoal); }
 
+
+  /* ===== PHOTOS ===== */
+  .hero-grid img{ width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
+  .hero-grid img.hat{ object-position:center 38%; }
+  .gallery{ display:grid; grid-template-columns: repeat(4,1fr); gap:14px; }
+  .gallery button{ border:none; background:none; padding:0; cursor:zoom-in; display:block; text-align:left; }
+  .gallery img{ width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
+  .gallery img.hat{ object-position:center 38%; }
+  .gallery span{ display:block; font-size:13.5px; font-weight:600; color:var(--ink); margin-top:7px; }
+  dialog#lb{ border:none; background:transparent; max-width:96vw; max-height:96vh; margin:auto; }
+  dialog#lb::backdrop{ background:rgba(46,27,47,0.88); }
+  dialog#lb img{ max-width:96vw; max-height:88vh; display:block; margin:0 auto; border-radius:4px; }
+  dialog#lb p{ color:#fff; text-align:center; margin-top:10px; font-size:15px; }
+
   /* ===== ABOUT ===== */
   .about{ background: var(--ink); color: var(--cream); padding: 56px 0; }
   .about-inner{ display:grid; grid-template-columns: auto 1fr; gap:36px; align-items:center; }
@@ -132,6 +146,7 @@
     .hero-inner{ grid-template-columns:1fr; }
     .hero-grid{ margin-top:12px; }
     .cats{ grid-template-columns: 1fr 1fr; }
+    .gallery{ grid-template-columns: 1fr 1fr; }
     .about-inner{ grid-template-columns: 1fr; text-align:center; }
     .about-inner .gsq{ margin:0 auto; }
     .steps{ grid-template-columns: 1fr; }
@@ -150,6 +165,7 @@
     </div>
     <nav class="links">
       <a href="#shop">Shop</a>
+      <a href="#gallery">Recent work</a>
       <a href="#order">How to order</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -169,12 +185,12 @@
       </div>
     </div>
     <div class="hero-grid">
-      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#E8A33D"/><rect x="42" y="42" width="16" height="16" fill="#2E1B2F"/></svg>
-      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#B83B5E"/><rect x="42" y="42" width="16" height="16" fill="#E8A33D"/></svg>
-      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#E8A33D"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2F6F6E"/><rect x="42" y="42" width="16" height="16" fill="#B83B5E"/></svg>
-      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2E1B2F"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2F6F6E"/><rect x="42" y="42" width="16" height="16" fill="#E8A33D"/></svg>
-      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2E1B2F"/><rect x="42" y="42" width="16" height="16" fill="#2F6F6E"/></svg>
-      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2E1B2F"/><rect x="42" y="42" width="16" height="16" fill="#B83B5E"/></svg>
+      <img src="blue-bucket-bag.jpg" alt="Blue and cream crochet bucket bag" width="300" height="300">
+      <img src="rosette-scarf.jpg" alt="Rust and cream crochet scarf with a flower" width="300" height="300">
+      <img src="red-bucket-hat.jpg" alt="Red crochet bucket hat with black and white stripes" class="hat" width="300" height="300">
+      <img src="rust-cardigan.jpg" alt="Rust crochet cardigan with a flower" width="300" height="300">
+      <img src="pink-tote.jpg" alt="Pink crochet tote bag with tassel" width="300" height="300">
+      <img src="red-socks.jpg" alt="Red crochet socks with cream heels" width="300" height="300">
     </div>
   </div>
   <div class="chain">
@@ -222,6 +238,33 @@
     </div>
   </div>
 </section>
+
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Recent work</h2>
+      <p>Tap any piece to see it larger. Like something? Message us and we'll make yours in the colours you choose.</p>
+    </div>
+    <div class="gallery">
+      <button type="button" data-full="blue-bucket-bag.jpg" data-cap="Blue bucket bag"><img src="blue-bucket-bag.jpg" alt="Blue bucket bag" loading="lazy" width="300" height="300"><span>Blue bucket bag</span></button>
+      <button type="button" data-full="pink-bucket-bag.jpg" data-cap="Pink bucket bag"><img src="pink-bucket-bag.jpg" alt="Pink bucket bag" loading="lazy" width="300" height="300"><span>Pink bucket bag</span></button>
+      <button type="button" data-full="mustard-bucket-bag.jpg" data-cap="Mustard bucket bag"><img src="mustard-bucket-bag.jpg" alt="Mustard bucket bag" loading="lazy" width="300" height="300"><span>Mustard bucket bag</span></button>
+      <button type="button" data-full="green-bucket-bag.jpg" data-cap="Green bucket bag"><img src="green-bucket-bag.jpg" alt="Green bucket bag" loading="lazy" width="300" height="300"><span>Green bucket bag</span></button>
+      <button type="button" data-full="pink-tote.jpg" data-cap="Pink tote with tassel"><img src="pink-tote.jpg" alt="Pink tote with tassel" loading="lazy" width="300" height="300"><span>Pink tote with tassel</span></button>
+      <button type="button" data-full="blue-tote.jpg" data-cap="Blue tote with tassel"><img src="blue-tote.jpg" alt="Blue tote with tassel" loading="lazy" width="300" height="300"><span>Blue tote with tassel</span></button>
+      <button type="button" data-full="green-tote.jpg" data-cap="Green tote with tassel"><img src="green-tote.jpg" alt="Green tote with tassel" loading="lazy" width="300" height="300"><span>Green tote with tassel</span></button>
+      <button type="button" data-full="beige-tote.jpg" data-cap="Sand tote with tassel"><img src="beige-tote.jpg" alt="Sand tote with tassel" loading="lazy" width="300" height="300"><span>Sand tote with tassel</span></button>
+      <button type="button" data-full="red-bucket-hat.jpg" data-cap="Striped bucket hat"><img src="red-bucket-hat.jpg" alt="Striped bucket hat" loading="lazy" width="300" height="300" class="hat"><span>Striped bucket hat</span></button>
+      <button type="button" data-full="rosette-scarf.jpg" data-cap="Rosette scarf"><img src="rosette-scarf.jpg" alt="Rosette scarf" loading="lazy" width="300" height="300"><span>Rosette scarf</span></button>
+      <button type="button" data-full="rust-cardigan.jpg" data-cap="Rosette cardigan"><img src="rust-cardigan.jpg" alt="Rosette cardigan" loading="lazy" width="300" height="300"><span>Rosette cardigan</span></button>
+      <button type="button" data-full="green-cardigan.jpg" data-cap="Green cardigan"><img src="green-cardigan.jpg" alt="Green cardigan" loading="lazy" width="300" height="300"><span>Green cardigan</span></button>
+      <button type="button" data-full="grey-cardigan.jpg" data-cap="Grey cardigan"><img src="grey-cardigan.jpg" alt="Grey cardigan" loading="lazy" width="300" height="300"><span>Grey cardigan</span></button>
+      <button type="button" data-full="red-socks.jpg" data-cap="Crochet socks"><img src="red-socks.jpg" alt="Crochet socks" loading="lazy" width="300" height="300"><span>Crochet socks</span></button>
+    </div>
+  </div>
+</section>
+
+<dialog id="lb"><img alt=""><p></p></dialog>
 
 <section class="about">
   <div class="wrap about-inner">
@@ -312,6 +355,18 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+
+  var lb=document.getElementById('lb');
+  document.querySelectorAll('.gallery button').forEach(function(b){
+    b.addEventListener('click',function(){
+      lb.querySelector('img').src=b.dataset.full;
+      lb.querySelector('img').alt=b.dataset.cap;
+      lb.querySelector('p').textContent=b.dataset.cap;
+      lb.showModal();
+    });
+  });
+  lb.addEventListener('click',function(){ lb.close(); });
 
   document.getElementById('orderForm').addEventListener('submit', function(e){
     e.preventDefault();
