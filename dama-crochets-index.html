@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dama Crochets — Handmade Crochet, Nyeri</title>
+<meta name="description" content="Dama Crochets makes handmade crochet bags, hats, scarves, baby items and home decor in Nyeri — order custom pieces on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #2E1B2F;
+    --berry:    #B83B5E;
+    --mustard:  #E8A33D;
+    --teal:     #2F6F6E;
+    --cream:    #F7EEDD;
+    --cream-2:  #EFE2C8;
+    --charcoal: #2B2724;
+    --line:     rgba(46,27,47,0.14);
+  }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; }
+  body{
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Mulish', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  h1,h2,h3 { font-family: 'Fraunces', serif; font-weight: 600; }
+  a { color: inherit; }
+  .wrap{ max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+  /* granny square motif */
+  .gsq{ display:inline-block; }
+  .gsq-ring{ display:flex; align-items:center; justify-content:center; }
+
+  /* ===== HEADER ===== */
+  header{ position: sticky; top:0; z-index: 50; background: var(--cream); border-bottom: 1px solid var(--line); }
+  .nav{ display:flex; align-items:center; justify-content: space-between; padding: 16px 28px; max-width: 1120px; margin:0 auto; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{ width:40px; height:40px; }
+  .brand-name{ font-family:'Fraunces', serif; font-size:21px; font-weight:600; color:var(--ink); }
+  nav.links{ display:flex; gap:26px; }
+  nav.links a{ text-decoration:none; font-weight:700; font-size:15px; color:var(--ink); border-bottom:2px solid transparent; padding-bottom:3px; }
+  nav.links a:hover{ border-color: var(--berry); }
+  .nav-cta{ background: var(--berry); color:#fff !important; padding:10px 18px; border-radius: 3px; text-decoration:none; font-weight:700; font-size:14.5px; }
+  .nav-cta:hover{ background: var(--ink); }
+
+  /* ===== HERO ===== */
+  .hero{ padding: 64px 0 56px; }
+  .hero-inner{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap:48px; align-items:center; }
+  .eyebrow{ font-family:'Mulish',sans-serif; font-weight:700; font-size:14.5px; color:var(--berry); margin-bottom:16px; }
+  .hero h1{ font-size: clamp(38px,5vw,56px); line-height:1.05; font-style: italic; color: var(--ink); }
+  .hero p.lede{ font-size:17.5px; color: var(--charcoal); max-width: 46ch; margin-top:20px; }
+  .hero-actions{ margin-top:28px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{ display:inline-block; padding:14px 24px; border-radius:3px; text-decoration:none; font-weight:700; font-size:15px; }
+  .btn.solid{ background: var(--berry); color:#fff; }
+  .btn.solid:hover{ background: var(--ink); }
+  .btn.ghost{ border:2px solid var(--ink); color:var(--ink); }
+  .btn.ghost:hover{ background: var(--ink); color:#fff; }
+
+  .hero-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
+
+  /* ===== CHAIN DIVIDER ===== */
+  .chain{ display:flex; justify-content:center; gap:10px; padding: 6px 0 44px; }
+  .chain span{ width:16px; height:22px; border:3px solid var(--ink); border-radius:50%; opacity:0.55; }
+  .chain span:nth-child(odd){ border-color: var(--berry); }
+  .chain span:nth-child(3n){ border-color: var(--teal); }
+
+  /* ===== SECTION ===== */
+  .section{ padding: 10px 0 64px; }
+  .section-head{ margin-bottom: 36px; max-width: 56ch; }
+  .section-head h2{ font-size: clamp(28px,3.6vw,38px); color:var(--ink); font-style:italic; }
+  .section-head p{ margin-top:10px; font-size:15.5px; color:var(--charcoal); }
+
+  /* ===== CATEGORIES ===== */
+  .cats{ display:grid; grid-template-columns: repeat(3,1fr); gap:22px; }
+  .cat{ background: var(--cream-2); border-radius: 4px; padding: 26px 22px; text-align:center; }
+  .cat h3{ font-size:19px; margin:16px 0 6px; color:var(--ink); }
+  .cat p{ font-size:14px; color:var(--charcoal); }
+
+  /* ===== ABOUT ===== */
+  .about{ background: var(--ink); color: var(--cream); padding: 56px 0; }
+  .about-inner{ display:grid; grid-template-columns: auto 1fr; gap:36px; align-items:center; }
+  .about h2{ color:#fff; font-style:italic; font-size: clamp(26px,3.2vw,32px); margin-bottom:14px; }
+  .about p{ font-size:16px; color: var(--cream-2); max-width:56ch; }
+
+  /* ===== HOW TO ORDER ===== */
+  .steps{ display:grid; grid-template-columns: repeat(3,1fr); gap:28px; }
+  .step{ border-top:3px solid var(--berry); padding-top:16px; }
+  .step:nth-child(2){ border-color: var(--mustard); }
+  .step:nth-child(3){ border-color: var(--teal); }
+  .step .sn{ font-weight:700; color:var(--berry); font-size:13px; }
+  .step:nth-child(2) .sn{ color:var(--mustard); }
+  .step:nth-child(3) .sn{ color:var(--teal); }
+  .step h3{ font-size:20px; margin:8px 0 6px; color:var(--ink); }
+  .step p{ font-size:14.5px; color:var(--charcoal); }
+
+  /* ===== CONTACT ===== */
+  .contact{ background: var(--cream-2); }
+  .contact-inner{ display:grid; grid-template-columns: 1fr 1fr; gap:48px; padding:56px 0; }
+  .contact h2{ font-size: clamp(28px,3.6vw,36px); color:var(--ink); font-style:italic; margin-bottom:14px; }
+  .contact p.lede{ font-size:15.5px; color:var(--charcoal); max-width:42ch; margin-bottom:22px; }
+  .contact-row{ display:flex; gap:14px; padding:13px 0; border-bottom:1px solid var(--line); }
+  .contact-row .k{ width:100px; flex-shrink:0; font-weight:700; font-size:13.5px; color:var(--berry); }
+  .contact-row .v{ font-size:15.5px; }
+
+  form{ display:flex; flex-direction:column; gap:14px; }
+  form label{ font-weight:700; font-size:13px; color:var(--ink); margin-bottom:5px; display:block; }
+  form input, form select, form textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:3px; color:var(--charcoal); padding:12px 13px; font-family:'Mulish',sans-serif; font-size:15px; }
+  form input:focus, form select:focus, form textarea:focus{ outline:2px solid var(--berry); outline-offset:1px; }
+  form textarea{ resize:vertical; min-height:80px; }
+  form button{ margin-top:4px; background:var(--berry); color:#fff; border:none; border-radius:3px; padding:14px 18px; font-weight:700; font-size:15.5px; cursor:pointer; }
+  form button:hover{ background: var(--ink); }
+  .note{ font-size:12.5px; color:var(--charcoal); opacity:0.7; margin-top:8px; }
+
+  footer{ background: var(--ink); color: var(--cream-2); padding:22px 0; font-size:13px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; }
+
+  .wa-float{
+    position: fixed; bottom:20px; right:20px; z-index:100;
+    width:56px; height:56px; border-radius:50%; background:#25D366;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3); text-decoration:none;
+  }
+  .wa-float svg{ width:28px; height:28px; fill:#fff; }
+
+  @media (max-width: 860px){
+    nav.links{ display:none; }
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero-grid{ margin-top:12px; }
+    .cats{ grid-template-columns: 1fr 1fr; }
+    .about-inner{ grid-template-columns: 1fr; text-align:center; }
+    .about-inner .gsq{ margin:0 auto; }
+    .steps{ grid-template-columns: 1fr; }
+    .contact-inner{ grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40"><rect width="40" height="40" fill="#B83B5E"/><rect x="7" y="7" width="26" height="26" fill="#E8A33D"/><rect x="13" y="13" width="14" height="14" fill="#2F6F6E"/><rect x="17" y="17" width="6" height="6" fill="#F7EEDD"/></svg>
+      <div class="brand-name">Dama Crochets</div>
+    </div>
+    <nav class="links">
+      <a href="#shop">Shop</a>
+      <a href="#order">How to order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Order on WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Handmade in Nyeri</div>
+      <h1>Crochet, made one stitch at a time.</h1>
+      <p class="lede">Dama Crochets makes bags, hats, scarves, baby pieces and home decor by hand — pick a style and colour, and we'll make it yours.</p>
+      <div class="hero-actions">
+        <a class="btn solid" href="#contact">Order on WhatsApp</a>
+        <a class="btn ghost" href="#shop">See what we make</a>
+      </div>
+    </div>
+    <div class="hero-grid">
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#E8A33D"/><rect x="42" y="42" width="16" height="16" fill="#2E1B2F"/></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#B83B5E"/><rect x="42" y="42" width="16" height="16" fill="#E8A33D"/></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#E8A33D"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2F6F6E"/><rect x="42" y="42" width="16" height="16" fill="#B83B5E"/></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2E1B2F"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2F6F6E"/><rect x="42" y="42" width="16" height="16" fill="#E8A33D"/></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2E1B2F"/><rect x="42" y="42" width="16" height="16" fill="#2F6F6E"/></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="16" y="16" width="68" height="68" fill="#F7EEDD"/><rect x="30" y="30" width="40" height="40" fill="#2E1B2F"/><rect x="42" y="42" width="16" height="16" fill="#B83B5E"/></svg>
+    </div>
+  </div>
+  <div class="chain">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we make</h2>
+      <p>A mix of everything — tell us the piece, the size and the colours, and we'll crochet it for you.</p>
+    </div>
+    <div class="cats">
+      <div class="cat">
+        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#E8A33D"/></svg>
+        <h3>Bags</h3>
+        <p>Market totes, handbags, phone pouches</p>
+      </div>
+      <div class="cat">
+        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#E8A33D"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#2F6F6E"/></svg>
+        <h3>Hats &amp; beanies</h3>
+        <p>Everyday wear, warm and fitted</p>
+      </div>
+      <div class="cat">
+        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#B83B5E"/></svg>
+        <h3>Scarves &amp; wraps</h3>
+        <p>Soft, warm, made to length</p>
+      </div>
+      <div class="cat">
+        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2E1B2F"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#E8A33D"/></svg>
+        <h3>Baby items</h3>
+        <p>Booties, blankets, little hats</p>
+      </div>
+      <div class="cat">
+        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#2E1B2F"/></svg>
+        <h3>Home decor</h3>
+        <p>Doilies, coasters, cushion covers</p>
+      </div>
+      <div class="cat">
+        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#2E1B2F"/></svg>
+        <h3>Custom orders</h3>
+        <p>Your idea, your colours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-inner">
+    <svg class="gsq" width="130" height="130" viewBox="0 0 100 100"><rect width="100" height="100" fill="#E8A33D"/><rect x="14" y="14" width="72" height="72" fill="#F7EEDD"/><rect x="28" y="28" width="44" height="44" fill="#B83B5E"/><rect x="40" y="40" width="20" height="20" fill="#2F6F6E"/></svg>
+    <div>
+      <h2>Made by hand, by Dama.</h2>
+      <p>Every piece from Dama Crochets is made by hand in Nyeri, one stitch at a time — no two pieces are ever quite the same. If you've got an idea, a colour, or just a picture you liked, send it over and we'll talk through how to make it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="order" style="padding-top:56px;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How to order</h2>
+      <p>Three simple steps from idea to finished piece.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="sn">STEP 01</div>
+        <h3>Message your idea</h3>
+        <p>Tell us what you'd like — bag, hat, baby blanket, anything — and your colour preference.</p>
+      </div>
+      <div class="step">
+        <div class="sn">STEP 02</div>
+        <h3>Confirm details</h3>
+        <p>We agree on size, yarn colour and price, and give you a timeline.</p>
+      </div>
+      <div class="step">
+        <div class="sn">STEP 03</div>
+        <h3>We make &amp; deliver</h3>
+        <p>Your piece is crocheted by hand and delivered or ready for pickup in Nyeri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div>
+      <h2>Order your piece.</h2>
+      <p class="lede">Tell us what you'd like to have made, and we'll get back to you with a price and timeline.</p>
+      <div class="contact-row"><div class="k">WhatsApp</div><div class="v">0739 945 086</div></div>
+      <div class="contact-row"><div class="k">Location</div><div class="v">Nyeri, Kenya</div></div>
+    </div>
+    <div>
+      <form id="orderForm">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="item">What would you like made?</label>
+          <select id="item">
+            <option>Bag</option>
+            <option>Hat / beanie</option>
+            <option>Scarf / wrap</option>
+            <option>Baby item</option>
+            <option>Home decor</option>
+            <option>Something else / custom</option>
+          </select>
+        </div>
+        <div>
+          <label for="color">Colour preference</label>
+          <input id="color" type="text" placeholder="e.g. cream and berry">
+        </div>
+        <div>
+          <label for="msg">Notes</label>
+          <textarea id="msg" placeholder="Size, inspiration, anything else"></textarea>
+        </div>
+        <button type="submit">Send request on WhatsApp</button>
+        <div class="note">Tapping send opens WhatsApp with your details filled in — just hit send there.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Dama Crochets</div>
+    <div>&#169; <span id="year"></span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/254739945086?text=Hello%20Dama%20Crochets%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2.01 6.476 2.01 11.994c0 1.996.523 3.869 1.436 5.492L2 22l4.643-1.417a9.937 9.937 0 0 0 5.361 1.554h.004c5.518 0 9.994-4.476 9.994-9.994C21.998 6.626 17.522 2.15 12.004 2Zm0 18.19a8.19 8.19 0 0 1-4.174-1.144l-.3-.178-2.756.841.848-2.686-.196-.31a8.18 8.18 0 0 1-1.226-4.32c0-4.522 3.68-8.201 8.208-8.201 2.19 0 4.25.853 5.798 2.403a8.16 8.16 0 0 1 2.404 5.802c0 4.524-3.68 8.203-8.208 8.203Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value || 'Not given';
+    var item = document.getElementById('item').value;
+    var color = document.getElementById('color').value || 'Not specified';
+    var msg = document.getElementById('msg').value || 'None';
+
+    var text = 'Hello Dama Crochets, I would like to place an order.\n\n'
+      + 'Name: ' + name + '\n'
+      + 'Item: ' + item + '\n'
+      + 'Colour preference: ' + color + '\n'
+      + 'Notes: ' + msg;
+
+    var url = 'https://wa.me/254739945086?text=' + encodeURIComponent(text);
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>
