@@ -83,13 +83,18 @@
 
 
   /* ===== PHOTOS ===== */
-  .hero-grid img{ width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
+  .hero-grid img{ width:100%; height:auto; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
   .hero-grid img.hat{ object-position:center 38%; }
   .gallery{ display:grid; grid-template-columns: repeat(4,1fr); gap:14px; }
   .gallery button{ border:none; background:none; padding:0; cursor:zoom-in; display:block; text-align:left; }
-  .gallery img{ width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
+  .gallery img{ width:100%; height:auto; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
   .gallery img.hat{ object-position:center 38%; }
   .gallery span{ display:block; font-size:13.5px; font-weight:600; color:var(--ink); margin-top:7px; }
+  .gallery button.wide{ grid-column: span 2; }
+  .gallery button.wide img{ aspect-ratio: 2.07/1; }
+  .cat-photos{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+  .cat-photos img:first-child{ grid-column: span 2; aspect-ratio: 16/9; }
+  .cat-photos img{ width:100%; height:auto; aspect-ratio:1; object-fit:cover; display:block; border-radius:4px; }
   dialog#lb{ border:none; background:transparent; max-width:96vw; max-height:96vh; margin:auto; }
   dialog#lb::backdrop{ background:rgba(46,27,47,0.88); }
   dialog#lb img{ max-width:96vw; max-height:88vh; display:block; margin:0 auto; border-radius:4px; }
@@ -206,27 +211,7 @@
     </div>
     <div class="cats">
       <div class="cat">
-        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#E8A33D"/></svg>
-        <h3>Bags</h3>
-        <p>Market totes, handbags, phone pouches</p>
-      </div>
-      <div class="cat">
-        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#E8A33D"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#2F6F6E"/></svg>
-        <h3>Hats &amp; beanies</h3>
-        <p>Everyday wear, warm and fitted</p>
-      </div>
-      <div class="cat">
-        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2F6F6E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#B83B5E"/></svg>
-        <h3>Scarves &amp; wraps</h3>
-        <p>Soft, warm, made to length</p>
-      </div>
-      <div class="cat">
-        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2E1B2F"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#E8A33D"/></svg>
-        <h3>Baby items</h3>
-        <p>Booties, blankets, little hats</p>
-      </div>
-      <div class="cat">
-        <svg width="46" height="46" viewBox="0 0 100 100"><rect width="100" height="100" fill="#B83B5E"/><rect x="18" y="18" width="64" height="64" fill="#F7EEDD"/><rect x="34" y="34" width="32" height="32" fill="#2E1B2F"/></svg>
+        <div class="cat-photos"><img src="cushion-covers.jpg" alt="Crochet cushion covers" loading="lazy" width="150" height="150"><img src="heart-doily.jpg" alt="Crochet heart doily" loading="lazy" width="150" height="150"><img src="coasters.jpg" alt="Crochet coasters" loading="lazy" width="150" height="150"></div>
         <h3>Home decor</h3>
         <p>Doilies, coasters, cushion covers</p>
       </div>
@@ -246,9 +231,12 @@
       <p>Tap any piece to see it larger. Like something? Message us and we'll make yours in the colours you choose.</p>
     </div>
     <div class="gallery">
+      <button type="button" data-full="heart-doily.jpg" data-cap="Heart doily"><img src="heart-doily.jpg" alt="Heart doily" loading="lazy" width="300" height="300"><span>Heart doily</span></button>
       <button type="button" data-full="blue-bucket-bag.jpg" data-cap="Blue bucket bag"><img src="blue-bucket-bag.jpg" alt="Blue bucket bag" loading="lazy" width="300" height="300"><span>Blue bucket bag</span></button>
+      <button type="button" class="wide" data-full="cushion-covers.jpg" data-cap="Cushion covers"><img src="cushion-covers.jpg" alt="Cushion covers" loading="lazy" width="300" height="300"><span>Cushion covers</span></button>
       <button type="button" data-full="pink-bucket-bag.jpg" data-cap="Pink bucket bag"><img src="pink-bucket-bag.jpg" alt="Pink bucket bag" loading="lazy" width="300" height="300"><span>Pink bucket bag</span></button>
       <button type="button" data-full="mustard-bucket-bag.jpg" data-cap="Mustard bucket bag"><img src="mustard-bucket-bag.jpg" alt="Mustard bucket bag" loading="lazy" width="300" height="300"><span>Mustard bucket bag</span></button>
+      <button type="button" class="wide" data-full="coasters.jpg" data-cap="Coasters"><img src="coasters.jpg" alt="Coasters" loading="lazy" width="300" height="300"><span>Coasters</span></button>
       <button type="button" data-full="green-bucket-bag.jpg" data-cap="Green bucket bag"><img src="green-bucket-bag.jpg" alt="Green bucket bag" loading="lazy" width="300" height="300"><span>Green bucket bag</span></button>
       <button type="button" data-full="pink-tote.jpg" data-cap="Pink tote with tassel"><img src="pink-tote.jpg" alt="Pink tote with tassel" loading="lazy" width="300" height="300"><span>Pink tote with tassel</span></button>
       <button type="button" data-full="blue-tote.jpg" data-cap="Blue tote with tassel"><img src="blue-tote.jpg" alt="Blue tote with tassel" loading="lazy" width="300" height="300"><span>Blue tote with tassel</span></button>
